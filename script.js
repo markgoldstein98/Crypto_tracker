@@ -4,11 +4,6 @@ const CRYPTO_SYMBOL = "BTC";
 
 async function getFetch(url, headers) {
   const response = await fetch(url, headers);
-  {
-    headers: {
-      Authorization: API_KEY;
-    }
-  }
   const data = await response.json();
 
   return data;
@@ -16,6 +11,20 @@ async function getFetch(url, headers) {
 
 console.log(
   getFetch(
-    `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=${API_KEY}`
+    `https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest`,
+    {
+      method: "GET",
+      headers: {
+        "X-CMC_PRO_API_KEY": API_KEY,
+      },
+    }
   )
 );
+
+/* async function getCoinmarket() {
+  const data = await fetchData(
+    "https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",
+    { method: "GET", headers: { "X-CMC_PRO_API_KEY": API_KEY } }
+  );
+  console.log(data);
+} */
