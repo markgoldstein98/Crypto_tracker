@@ -13,18 +13,10 @@ console.log(
   getFetch(
     `https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest`,
     {
-      method: "GET",
+      method: "GET", //https://cors-anywhere.herokuapp.com/corsdemo kellett hozza!
       headers: {
         "X-CMC_PRO_API_KEY": API_KEY,
       },
     }
   )
 );
-
-/* async function getCoinmarket() {
-  const data = await fetchData(
-    "https://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",
-    { method: "GET", headers: { "X-CMC_PRO_API_KEY": API_KEY } }
-  );
-  console.log(data);
-} */
